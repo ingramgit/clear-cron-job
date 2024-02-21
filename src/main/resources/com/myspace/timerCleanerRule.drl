@@ -8,5 +8,5 @@ rule "Update Product Inventory"
 	when 
 		request: Request();
 	then
-	    
+	    TimerCleaner.removeOrphanedTimers(request.getUuids())
 	end	
