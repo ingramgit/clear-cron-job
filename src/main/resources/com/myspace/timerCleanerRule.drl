@@ -3,8 +3,7 @@ package com.myspace;
 import com.myspace.TimerCleaner
 import com.myspace.Request
 
-rule "Update Product Inventory"
-    ruleflow-group 'UpdateProductInventory'
+rule "Timer Cleaner"
 	when 
 		request: Request()
 	then
