@@ -7,5 +7,5 @@ rule "Timer Cleaner"
 	when 
 		request: Request()
 	then
-	    TimerCleaner.removeOrphanedTimers(request.getUuids())
+	    TimerCleaner.removeOrphanedTimers(request.getUuids());
 	end	
