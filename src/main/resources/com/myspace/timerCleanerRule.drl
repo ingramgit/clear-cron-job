@@ -6,7 +6,7 @@ import com.myspace.Request
 rule "Update Product Inventory"
     ruleflow-group 'UpdateProductInventory'
 	when 
-		request: Request();
+		request: Request()
 	then
 	    TimerCleaner.removeOrphanedTimers(request.getUuids())
 	end	
