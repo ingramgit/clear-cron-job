@@ -40,6 +40,7 @@ public class TimerCleaner implements java.io.Serializable {
             Method removeJobMethod = null;
             
             final Class jobHandleClass = Class.forName(JOB_HANDLE_CLASS_NAME);
+            final Class timerClass = Class.forName(TIMER_CLASS_NAME);
 
             if (null != ejbTimerScheduler){
                 getTimerByNameMethod = ejbTimerScheduler.getClass().getMethod("getTimerByName", String.class);
@@ -52,7 +53,7 @@ public class TimerCleaner implements java.io.Serializable {
                         getJobHandleMethod = globalJpaTimerJobInstance.getClass().getMethod("getJobHandle");
                         jobHandle = getJobHandleMethod.invoke(globalJpaTimerJobInstance);
     
-                        removeJobMethod = ejbTimerScheduler.getClass().getMethod("removeJob", jobHandleClass, null);
+                        removeJobMethod = ejbTimerScheduler.getClass().getMethod("removeJob", jobHandleClass, timerClass);
                         System.out.println("EJB timer removal status for " + uuid + ": " + removeJobMethod.invoke(ejbTimerScheduler, jobHandle, null));
                     }
                 }
