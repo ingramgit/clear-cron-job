@@ -1,7 +1,7 @@
 package com.myspace;
 
 import java.util.Hashtable;
-import java.util.ArrayList;
+import java.util.List;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -24,7 +24,7 @@ public class TimerCleaner implements java.io.Serializable {
     public TimerCleaner() {
     }
 
-    public static void removeOrphanedTimers(ArrayList<String> uuids){
+    public static void removeOrphanedTimers(List<String> uuids){
         try {
             final Hashtable jndiProperties = new Hashtable();
             jndiProperties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
