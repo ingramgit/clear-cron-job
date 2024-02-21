@@ -8,7 +8,5 @@ rule "Update Product Inventory"
 	when 
 		request: Request();
 	then
-	    String url = "https://icg-isvc-walmart-retail-dev/gateway/v1/productCatalog/updateProductInventory";
-		String response = RestWebServiceConsumer.get(url);
-		request.setResponse(response);
+	    
 	end	
