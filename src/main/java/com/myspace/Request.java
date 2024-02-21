@@ -6,12 +6,23 @@ package com.myspace;
 
 public class Request implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Request() {
-    }
+	private java.util.List<java.lang.String> uuids;
 
+	public Request() {
+	}
 
+	public java.util.List<java.lang.String> getUuids() {
+		return this.uuids;
+	}
 
+	public void setUuids(java.util.List<java.lang.String> uuids) {
+		this.uuids = uuids;
+	}
+
+	public Request(java.util.List<java.lang.String> uuids) {
+		this.uuids = uuids;
+	}
 
 }
