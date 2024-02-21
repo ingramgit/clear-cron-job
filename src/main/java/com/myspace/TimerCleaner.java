@@ -50,8 +50,8 @@ public class TimerCleaner implements java.io.Serializable {
                         getJobHandleMethod = globalJpaTimerJobInstance.getClass().getMethod("getJobHandle");
                         jobHandle = getJobHandleMethod.invoke(globalJpaTimerJobInstance);
     
-                        removeJobMethod = ejbTimerScheduler.getClass().getMethod("removeJob", jobHandleClass);
-                        System.out.println("EJB timer removal status for " + uuid + ": " + removeJobMethod.invoke(ejbTimerScheduler, jobHandle));
+                        removeJobMethod = ejbTimerScheduler.getClass().getMethod("removeJob", jobHandleClass, null);
+                        System.out.println("EJB timer removal status for " + uuid + ": " + removeJobMethod.invoke(ejbTimerScheduler, jobHandle, null));
                     }
                 }
             }
