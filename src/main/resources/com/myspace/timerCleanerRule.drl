@@ -1,2 +1,14 @@
 package com.myspace;
 
+import com.myspace.TimerCleaner
+import com.myspace.Request
+
+rule "Update Product Inventory"
+    ruleflow-group 'UpdateProductInventory'
+	when 
+		request: Request();
+	then
+	    String url = "https://icg-isvc-walmart-retail-dev/gateway/v1/productCatalog/updateProductInventory";
+		String response = RestWebServiceConsumer.get(url);
+		request.setResponse(response);
+	end	
