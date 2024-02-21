@@ -7,6 +7,8 @@ package com.myspace;
 public class TimerCleaner implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
+    static final String ETS_JNDI_NAME = "java:module/EJBTimerScheduler";
+    static final String JOB_HANDLE_CLASS_NAME = "org.drools.core.time.JobHandle";
 
     public TimerCleaner() {
     }
